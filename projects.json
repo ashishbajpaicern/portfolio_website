@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Predictive Sales Model",
+        "description": "Developed a machine learning model using XGBoost to forecast sales for a retail company, improving accuracy by 15%.",
+        "image": "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80",
+        "github": "https://github.com/ashishbajpaicern/sales-forecast",
+        "live": "https://example.com/sales-forecast"
+    },
+    {
+        "title": "Customer Segmentation",
+        "description": "Applied K-means clustering to segment customers based on purchasing behavior, enabling targeted marketing strategies.",
+        "image": "https://images.unsplash.com/photo-1551288049-b1bd52206d29?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80",
+        "github": "https://github.com/ashishbajpaicern/customer-segmentation",
+        "live": "https://example.com/customer-segmentation"
+    },
+    {
+        "title": "Image Classification",
+        "description": "Built a convolutional neural network with TensorFlow for image classification, achieving 92% accuracy.",
+        "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80",
+        "github": "https://github.com/ashishbajpaicern/image-classification",
+        "live": "https://example.com/image-classification"
+    }
+]
