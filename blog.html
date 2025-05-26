@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Ashish Bajpai - Case Studies</title>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <header id="home">
+      <h1>Case Studies</h1>
+      <p class="quote">"Turning data into stories, one insight at a time."</p>
+      <div class="social-links">
+        <a class="button" href="mailto:ashishbajpaicern@gmail.com">Email</a>
+        <a
+          class="button"
+          href="https://www.linkedin.com/in/ashish-bajpai-11391423a/"
+          >LinkedIn</a
+        >
+        <a class="button" href="https://github.com/ashishbajpaicern">GitHub</a>
+      </div>
+    </header>
+    <div class="container">
+      <section id="case-studies" class="case-studies">
+        <h2>My Case Studies</h2>
+        <!-- Case studies will be dynamically inserted here via JavaScript -->
+        <div id="case-studies-grid"></div>
+
+        <!-- Placeholder Template for Manual Case Study Addition -->
+        <!--
+        <div class="case-study">
+          <h3>[Case Study Title]</h3>
+          <h4>Problem Statement</h4>
+          <p>[Describe the problem here.]</p>
+          <h4>Approach</h4>
+          <p>[Describe your approach here.]</p>
+          <h4>Results</h4>
+          <p>[Describe the results here.]</p>
+          <div class="case-study-image">
+            <img src="[path/to/image.jpg]" alt="[Image description]">
+            <p class="caption">[Figure caption]</p>
+          </div>
+          <button class="toggle-code button" data-target="code-block-[unique-id]">Show Python Code</button>
+          <div id="code-block-[unique-id]" style="display: none;">
+            <pre><code class="language-python">
+[Insert Python code here]
+            </code></pre>
+          </div>
+        </div>
+        -->
+      </section>
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p class="quote">
+          Feel free to contact me for any questions. For open source projects,
+          please open an issue or pull request on GitHub. If you want to follow
+          my work, reach me on LinkedIn. Otherwise, send me an email at:
+          <span
+            ><a href="mailto:ashishbajpaicern@gmail.com"
+              >ashishbajpaicern@gmail.com</a
+            ></span
+          >
+        </p>
+        <div class="social-links">
+          <a
+            class="button"
+            href="https://www.linkedin.com/in/ashish-bajpai-11391423a/"
+            >LinkedIn</a
+          >
+          <a class="button" href="https://github.com/ashishbajpaicern"
+            >GitHub</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      // Particles.js configuration
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffff00" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffff00",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            speed: 3,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            repulse: { distance: 120, duration: 0.3 },
+            push: { particles_nb: 4 },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // Load case studies from JSON
+      fetch("case_studies.json")
+        .then((response) => response.json())
+        .then((caseStudies) => {
+          const caseStudiesGrid = document.getElementById("case-studies-grid");
+          caseStudies.forEach((study, index) => {
+            const studyDiv = document.createElement("div");
+            studyDiv.className = "case-study";
+            studyDiv.innerHTML = `
+              <h3>${study.title}</h3>
+              <h4>Problem Statement</h4>
+              <p>${study.problem}</p>
+              <h4>Approach</h4>
+              <p>${study.approach}</p>
+              <h4>Results</h4>
+              <p>${study.results}</p>
+              ${study.images
+                .map(
+                  (img, imgIndex) => `
+                <div class="case-study-image">
+                  <img src="${img.src}" alt="${img.alt}">
+                  <p class="caption">${img.caption}</p>
+                </div>
+              `
+                )
+                .join("")}
+              <button class="toggle-code button" data-target="code-block-${index}">Show Python Code</button>
+              <div id="code-block-${index}" style="display: none;">
+                <pre><code class="language-python">${study.code}</code></pre>
+              </div>
+            `;
+            caseStudiesGrid.appendChild(studyDiv);
+          });
+
+          // Add event listeners for code toggle buttons
+          document.querySelectorAll(".toggle-code").forEach((button) => {
+            button.addEventListener("click", () => {
+              const targetId = button.getAttribute("data-target");
+              const codeBlock = document.getElementById(targetId);
+              if (codeBlock.style.display === "none") {
+                codeBlock.style.display = "block";
+                button.textContent = "Hide Python Code";
+              } else {
+                codeBlock.style.display = "none";
+                button.textContent = "Show Python Code";
+              }
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Error loading case studies:", error);
+          document.getElementById("case-studies-grid").innerHTML =
+            "<p>Failed to load case studies. Please try again later.</p>";
+        });
+
+      // Scroll reveal
+      window.addEventListener("scroll", function () {
+        const container = document.querySelector(".container");
+        const containerPosition = container.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        if (containerPosition < screenPosition) {
+          container.classList.add("visible");
+        }
+
+        const sections = document.querySelectorAll("section, header");
+        const navLinks = document.querySelectorAll("nav a");
+        let current = "";
+        sections.forEach((section) => {
+          if (window.scrollY >= section.offsetTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").substring(1) === current) {
+            link.classList.add("active");
+          }
+        });
+
+        // Case study and image reveal
+        const caseStudies = document.querySelectorAll(".case-study");
+        const images = document.querySelectorAll(".case-study-image");
+        caseStudies.forEach((study) => {
+          const studyPosition = study.getBoundingClientRect().top;
+          if (studyPosition < screenPosition) {
+            study.classList.add("visible");
+          }
+        });
+        images.forEach((img) => {
+          const imgPosition = img.getBoundingClientRect().top;
+          if (imgPosition < screenPosition) {
+            img.classList.add("visible");
+          }
+        });
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll("nav a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetId);
+          window.scrollTo({
+            top: targetElement.offsetTop - 60,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

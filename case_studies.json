@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Zomato Data Analysis",
+    "problem": "TAnalysed the trending customer preferences based on zomato data.",
+    "approach": "I started by cleaning the dataset, handling missing values, and encoding categorical variables. I then performed exploratory data analysis to identify trends and correlations. Finally, I implemented a Random Forest Regressor to predict sales, achieving an accuracy of 85%.",
+    "results": "The model successfully predicted sales trends, enabling the company to reduce overstock by 20% and improve marketing campaign targeting. The insights were presented in a dashboard for easy stakeholder access.",
+    "images": [
+      {
+        "src": "path/to/sales_trend_chart.jpg",
+        "alt": "Sales trends visualization",
+        "caption": "Figure 1: Visualization of sales trends from the predictive model."
+      }
+    ],
+    "code": "import pandas as pd\nimport numpy as np\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import LabelEncoder\n\n# Load dataset\ndata = pd.read_csv('sales_data.csv')\n\n# Data cleaning\ndata = data.dropna()\nle = LabelEncoder()\ndata['category'] = le.fit_transform(data['category'])\ndata['customer_type'] = le.fit_transform(data['customer_type'])\n\n# Features and target\nX = data[['category', 'customer_type', 'month', 'year']]\ny = data['sales']\n\n# Split data\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# Model training\nmodel = RandomForestRegressor(n_estimators=100, random_state=42)\nmodel.fit(X_train, y_train)\n\n# Model evaluation\nscore = model.score(X_test, y_test)\nprint(f'Model Accuracy: {score:.2f}')\n\n# Predict future sales\nfuture_data = pd.DataFrame({\n    'category': [le.transform(['Electronics'])[0]],\n    'customer_type': [le.transform(['Retail'])[0]],\n    'month': [12],\n    'year': [2025]\n})\nprediction = model.predict(future_data)\nprint(f'Predicted Sales: {prediction[0]:.2f}')"
+  },
+  {
+    "title": "[Your Second Case Study Title]",
+    "problem": "[Describe the problem here.]",
+    "approach": "[Describe your approach here.]",
+    "results": "[Describe the results here.]",
+    "images": [
+      {
+        "src": "[path/to/your/image.jpg]",
+        "alt": "[Image description]",
+        "caption": "[Figure caption]"
+      }
+    ],
+    "code": "[Insert Python code here]"
+  }
+]

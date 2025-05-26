@@ -3,24 +3,24 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Arial", sans-serif;
-  }
+}
 
-  body {
+body {
     color: #ffffff;
     line-height: 1.6;
     background: #000000;
     overflow-x: hidden;
-  }
+}
 
-  #particles-js {
+#particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
     background: #000000;
-  }
+}
 
-  nav {
+nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -28,32 +28,32 @@
     backdrop-filter: blur(5px);
     z-index: 2;
     padding: 10px 0;
-  }
+}
 
-  nav ul {
+nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-  }
+}
 
-  nav ul li {
+nav ul li {
     margin: 0 20px;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s;
-  }
+}
 
-  nav ul li a:hover,
-  nav ul li a.active {
+nav ul li a:hover,
+nav ul li a.active {
     color: #ffff00;
     text-shadow: 0 0 5px #ffff00;
-  }
+}
 
-  header {
+header {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -63,26 +63,26 @@
     position: relative;
     z-index: 1;
     padding-top: 60px;
-  }
+}
 
-  header h1 {
+header h1 {
     font-size: 4em;
     color: #ffff00;
     margin-bottom: 10px;
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
-  }
+}
 
-  .quote {
+.quote {
     font-size: 1.2em;
     color: #ffffff;
     margin-bottom: 35px;
     opacity: 0;
     animation: fadeIn 1s ease-in 0.3s forwards;
     max-width: 80%;
-  }
+}
 
-  .social-links a.button {
+.social-links a.button {
     background: #fbca1f;
     font-family: inherit;
     padding: 0.6em 1.3em;
@@ -97,28 +97,28 @@
     opacity: 0;
     animation: fadeIn 1s ease-in 0.5s forwards;
     transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
-  }
+}
 
-  .social-links a.button:hover {
+.social-links a.button:hover {
     transform: translate(-0.05em, -0.05em);
     color: #cccccc;
     box-shadow: 0.15em 0.15em;
-  }
+}
 
-  .social-links a.button:active {
+.social-links a.button:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
-  }
+}
 
-  .scroll-hint {
+.scroll-hint {
     position: absolute;
     bottom: 20px;
     color: #ffff00;
     font-size: 1.5em;
     animation: bounce 2s infinite;
-  }
+}
 
-  .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -127,42 +127,42 @@
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-  }
+}
 
-  .container.visible {
+.container.visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
 
-  section {
+section {
     margin: 40px 0;
     background: rgba(26, 26, 26, 0.05);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  h2 {
+h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #ffff00;
     border-bottom: 2px solid #ffff00;
     display: inline-block;
-  }
+}
 
-  .about p {
+.about p {
     font-size: 1.1em;
     color: #cccccc;
     margin-bottom: 20px;
-  }
+}
 
-  .timeline {
+.timeline {
     position: relative;
     margin: 40px 0;
     padding: 20px 0;
-  }
+}
 
-  .timeline::before {
+.timeline::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -171,9 +171,9 @@
     height: 4px;
     background: #ffff00;
     transform: translateY(-50%);
-  }
+}
 
-  .timeline-item {
+.timeline-item {
     position: relative;
     width: 45%;
     padding: 20px;
@@ -185,24 +185,24 @@
     transition: transform 0.2s, box-shadow 0.2s;
     opacity: 0;
     transform: translateY(50px);
-  }
+}
 
-  .timeline-item.visible {
+.timeline-item.visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
 
-  .timeline-item:nth-child(odd) {
+.timeline-item:nth-child(odd) {
     margin-left: 55%;
     margin-bottom: 80px;
-  }
+}
 
-  .timeline-item:nth-child(even) {
+.timeline-item:nth-child(even) {
     margin-left: 0%;
     margin-top: 80px;
-  }
+}
 
-  .timeline-item::before {
+.timeline-item::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -211,46 +211,46 @@
     background: #ffff00;
     border-radius: 50%;
     transform: translateY(-50%);
-  }
+}
 
-  .timeline-item:nth-child(odd)::before {
+.timeline-item:nth-child(odd)::before {
     left: -48px;
-  }
+}
 
-  .timeline-item:nth-child(even)::before {
+.timeline-item:nth-child(even)::before {
     right: -48px;
-  }
+}
 
-  .timeline-item h3 {
+.timeline-item h3 {
     font-size: 1.4em;
     color: #ffffff;
     margin-bottom: 5px;
-  }
+}
 
-  .timeline-item .role {
+.timeline-item .role {
     font-size: 1.1em;
     color: #fbca1f;
     margin-bottom: 5px;
-  }
+}
 
-  .timeline-item .duration {
+.timeline-item .duration {
     font-size: 0.9em;
     color: #cccccc;
     margin-bottom: 10px;
-  }
+}
 
-  .timeline-item p {
+.timeline-item p {
     font-size: 1em;
     color: #cccccc;
-  }
+}
 
-  .projects-grid {
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-  }
+}
 
-  .project {
+.project {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -258,41 +258,41 @@
     padding: 20px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  }
+}
 
-  .project:hover {
+.project:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     background: rgba(255, 255, 255, 0.15);
-  }
+}
 
-  .project img {
+.project img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
-  }
+}
 
-  .project h3 {
+.project h3 {
     color: #ffffff;
     margin-bottom: 10px;
     font-size: 1.4em;
-  }
+}
 
-  .project p {
+.project p {
     color: #cccccc;
     margin-bottom: 15px;
     font-size: 1em;
-  }
+}
 
-  .project .links {
+.project .links {
     display: flex;
     justify-content: center;
     gap: 15px;
-  }
+}
 
-  .project a.button {
+.project a.button {
     background: #fbca1f;
     padding: 0.6em 1.2em;
     font-weight: bold;
@@ -303,138 +303,257 @@
     color: #000000;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
-  }
+}
 
-  .project a.button:hover {
+.project a.button:hover {
     transform: translate(-0.05em, -0.05em);
     color: #cccccc;
     box-shadow: 0.15em 0.15em;
-  }
+}
 
-  .project a.button:active {
+.project a.button:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
-  }
+}
 
-  .contact a {
+.contact a {
     color: #ffffff;
     text-decoration: none;
     margin-right: 15px;
     transition: color 0.3s;
-  }
+}
 
-  .contact a:hover {
+.contact a:hover {
     color: #ffff00;
-  }
+}
 
-  @keyframes fadeIn {
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
 
-  @keyframes bounce {
+@keyframes bounce {
     0%,
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     50% {
-      transform: translateY(10px);
+        transform: translateY(10px);
     }
-  }
+}
 
-  @media (max-width: 768px) {
+/* Case Study Section */
+.case-studies {
+    padding: 40px 20px;
+}
+
+.case-study {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Matches portfolio's subtle background */
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.case-study.visible {
+    opacity: 1;
+}
+
+.case-study h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ffffff; /* Match portfolio heading color */
+}
+
+.case-study h4 {
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fbca1f; /* Match timeline role color */
+}
+
+.case-study p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #cccccc; /* Match portfolio text color */
+}
+
+.case-study-image {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.case-study-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-image .caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.case-study-image.visible {
+    opacity: 1;
+}
+
+.toggle-code {
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #fbca1f; /* Match button style */
+    border: 2px solid black;
+    border-radius: 0.4em;
+    color: #000000;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.toggle-code:hover {
+    transform: translate(-0.05em, -0.05em);
+    color: #cccccc;
+    box-shadow: 0.15em 0.15em;
+}
+
+.toggle-code:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+/* Code block styling with black background */
+pre {
+    background: #000000 !important; /* Black background for code, !important to override any conflicts */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333; /* Subtle border for definition */
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Match section shadow */
+}
+
+code.language-python {
+    font-family: 'Courier New', Courier, monospace;
+    color: #f8f8f2; /* Light text for contrast */
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
     header h1 {
-      font-size: 2.5em;
+        font-size: 2.5em;
     }
 
     .quote {
-      font-size: 1em;
-      max-width: 90%;
+        font-size: 1em;
+        max-width: 90%;
     }
 
     .social-links a.button {
-      font-size: 16px;
-      margin: 0 8px;
-      padding: 0.5em 1em;
+        font-size: 16px;
+        margin: 0 8px;
+        padding: 0.5em 1em;
     }
 
     .container {
-      padding: 15px;
+        padding: 15px;
     }
 
     nav ul {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
     }
 
     nav ul li {
-      margin: 10px 0;
+        margin: 10px 0;
     }
 
     .projects-grid {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
 
     .project img {
-      height: 150px;
+        height: 150px;
     }
 
     .project h3 {
-      font-size: 1.2em;
+        font-size: 1.2em;
     }
 
     .project p {
-      font-size: 0.9em;
+        font-size: 0.9em;
     }
 
     .project a.button {
-      font-size: 14px;
-      padding: 0.5em 1em;
+        font-size: 14px;
+        padding: 0.5em 1em;
     }
 
     .scroll-hint {
-      font-size: 1.2em;
+        font-size: 1.2em;
     }
 
     .timeline::before {
-      left: 20px;
-      width: 4px;
-      top: 0;
-      height: 100%;
+        left: 20px;
+        width: 4px;
+        top: 0;
+        height: 100%;
     }
 
     .timeline-item {
-      width: 100%;
-      margin: 200px 0 !important;
-      padding-left: 40px;
+        width: 100%;
+        margin: 200px 0 !important;
+        padding-left: 40px;
     }
 
     .timeline-item::before {
-      left: 8px !important;
-      top: 20px;
-      transform: none;
+        left: 8px !important;
+        top: 20px;
+        transform: none;
     }
 
     .timeline-item h3 {
-      font-size: 1.2em;
+        font-size: 1.2em;
     }
 
     .timeline-item .role {
-      font-size: 1em;
+        font-size: 1em;
     }
 
     .timeline-item .duration {
-      font-size: 0.8em;
+        font-size: 0.8em;
     }
 
     .timeline-item p {
-      font-size: 0.9em;
+        font-size: 0.9em;
     }
-  }
+
+    /* Case study responsive adjustments */
+    .case-study h3 {
+        font-size: 1.5em;
+    }
+
+    .case-study h4 {
+        font-size: 1.2em;
+    }
+
+    .case-study p {
+        font-size: 0.9em;
+    }
+
+    .toggle-code {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
